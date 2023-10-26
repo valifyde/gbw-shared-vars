@@ -1,0 +1,211 @@
+/* 
+
+	breakpoint-mixin
+    sm: mobile
+    md: tablet
+    lg: desktop
+    xl, xxl, xxxl: desktop
+
+	https://www.sassmeister.com
+
+*/
+
+// editable base numbers - ONLY EDIT THIS SECTION
+$bpSm: 375 !default;
+$bpMd: 768 !default;
+$bpLg: 1024 !default;
+$bpXl: 1280 !default;
+$bpXxl: 1440 !default;
+$bpXxxl: 1920 !default;
+
+// as px string: eg 375px
+$bpSmPx: $bpSm + 'px'; // 375px
+$bpMdPx: $bpMd + 'px'; // 768px
+$bpLgPx: $bpLg + 'px'; // 1024px
+$bpXlPx: $bpXl + 'px'; // 1280px
+$bpXxlPx: $bpXxl + 'px'; // 1440px
+$bpXxxlPx: $bpXxxl + 'px'; // 1920px
+
+// as px string minus one: eg 374px
+$bpSmDownPx: ($bpSm - 1) + 'px'; // 374px
+$bpMdDownPx: ($bpMd - 1) + 'px'; // 767px
+$bpLgDownPx: ($bpLg - 1) + 'px'; // 1023px
+$bpXlDownPx: ($bpXl - 1) + 'px'; // 1279px
+$bpXxlDownPx: ($bpXxl - 1) + 'px'; // 1439px
+$bpXxxlDownPx: ($bpXxxl - 1) + 'px'; // 1919px
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+
+@mixin breakpoint($breakpoint) {
+  /*
+    // how to use mixin
+    @include breakpoint(sm) {
+        background: red;
+    }
+  */
+  @if $breakpoint == sm {
+    @media (max-width: $bpMdPx) {
+      @content;
+    }
+  } @else if $breakpoint == md {
+    @media (min-width: $bpMdPx) and (max-width: $bpLgDownPx) {
+      @content;
+    }
+  } @else if $breakpoint == lg {
+    @media (min-width: $bpLgPx) and (max-width: $bpXlDownPx) {
+      @content;
+    }
+  } @else if $breakpoint == xl {
+    @media (min-width: $bpXlPx) and (max-width: $bpXxlDownPx) {
+      @content;
+    }
+  } @else if $breakpoint == xxl {
+    @media (min-width: $bpXxlPx) and (max-width: $bpXxxlDownPx) {
+      @content;
+    }
+  } @else if $breakpoint == xxxl {
+    @media (min-width: $bpXxxlPx) {
+      @content;
+    }
+  }
+}
+
+* {
+  /* uncomment this block for testing within gbw-base */
+  @include breakpoint(sm) {
+    background: red !important;
+  }
+  @include breakpoint(md) {
+    background: blue !important;
+  }
+  @include breakpoint(lg) {
+    background: green !important;
+  }
+  @include breakpoint(xl) {
+    background: yellow !important;
+  }
+  @include breakpoint(xxl) {
+    background: purple !important;
+  }
+  @include breakpoint(xxxl) {
+    background: pink !important;
+  }
+}
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+
+@mixin breakpoint-up($breakpoint) {
+  /*
+    // how to use mixin
+    @include breakpoint-up(sm) {
+        background: red;
+    }
+  */
+  @if $breakpoint == sm {
+    @media (min-width: 0) {
+      @content;
+    }
+  } @else if $breakpoint == md {
+    @media (min-width: $bpMdPx) {
+      @content;
+    }
+  } @else if $breakpoint == lg {
+    @media (min-width: $bpLgPx) {
+      @content;
+    }
+  } @else if $breakpoint == xl {
+    @media (min-width: $bpXlPx) {
+      @content;
+    }
+  } @else if $breakpoint == xxl {
+    @media (min-width: $bpXxlPx) {
+      @content;
+    }
+  } @else if $breakpoint == xxxl {
+    @media (min-width: $bpXxxlPx) {
+      @content;
+    }
+  }
+}
+
+// * {
+//   /* uncomment this block for testing within gbw-base */
+//   @include breakpoint-up(sm) {
+//     background: red !important;
+//   }
+//   @include breakpoint-up(md) {
+//     background: blue !important;
+//   }
+//   @include breakpoint-up(lg) {
+//     background: green !important;
+//   }
+//   @include breakpoint-up(xl) {
+//     background: yellow !important;
+//   }
+//   @include breakpoint-up(xxl) {
+//     background: purple !important;
+//   }
+//   @include breakpoint-up(xxxl) {
+//     background: pink !important;
+//   }
+// }
+
+/* ------------------------------------------------------------------------------------------------------------------ */
+
+@mixin breakpoint-down($breakpoint) {
+  /*
+    // how to use mixin
+    @include breakpoint-down(sm) {
+        background: red;
+    }
+  */
+  @if $breakpoint == sm {
+    @media (max-width: $bpSmDownPx) {
+      @content;
+    }
+  } @else if $breakpoint == md {
+    @media (max-width: $bpMdDownPx) {
+      @content;
+    }
+  } @else if $breakpoint == lg {
+    @media (max-width: $bpLgDownPx) {
+      @content;
+    }
+  } @else if $breakpoint == xl {
+    @media (max-width: $bpXlDownPx) {
+      @content;
+    }
+  } @else if $breakpoint == xxl {
+    @media (max-width: $bpXxlDownPx) {
+      @content;
+    }
+  } @else if $breakpoint == xxxl {
+    @media (max-width: $bpXxxlDownPx) {
+      @content;
+    }
+  }
+}
+
+// * {
+//   /* uncomment this block for testing within gbw-base */
+//   @include breakpoint-down(xxxl) {
+//     background: pink !important;
+//   }
+//   @include breakpoint-down(xxl) {
+//     background: purple !important;
+//   }
+//   @include breakpoint-down(xl) {
+//     background: yellow !important;
+//   }
+//   @include breakpoint-down(lg) {
+//     background: green !important;
+//   }
+//   @include breakpoint-down(md) {
+//     background: blue !important;
+//   }
+//   @include breakpoint-down(sm) {
+//     background: red !important;
+//   }
+// }
+
+/* ------------------------------------------------------------------------------------------------------------------ */
