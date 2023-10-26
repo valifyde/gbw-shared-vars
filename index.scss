@@ -70,27 +70,27 @@ $bpXxxlDownPx: ($bpXxxl - 1) + 'px'; // 1919px
   }
 }
 
-* {
-  /* uncomment this block for testing within gbw-base */
-  @include breakpoint(sm) {
-    background: red !important;
-  }
-  @include breakpoint(md) {
-    background: blue !important;
-  }
-  @include breakpoint(lg) {
-    background: green !important;
-  }
-  @include breakpoint(xl) {
-    background: yellow !important;
-  }
-  @include breakpoint(xxl) {
-    background: purple !important;
-  }
-  @include breakpoint(xxxl) {
-    background: pink !important;
-  }
-}
+// * {
+//   /* uncomment this block for testing within gbw-base */
+//   @include breakpoint(sm) {
+//     background: red !important;
+//   }
+//   @include breakpoint(md) {
+//     background: blue !important;
+//   }
+//   @include breakpoint(lg) {
+//     background: green !important;
+//   }
+//   @include breakpoint(xl) {
+//     background: yellow !important;
+//   }
+//   @include breakpoint(xxl) {
+//     background: purple !important;
+//   }
+//   @include breakpoint(xxxl) {
+//     background: pink !important;
+//   }
+// }
 
 /* ------------------------------------------------------------------------------------------------------------------ */
 
