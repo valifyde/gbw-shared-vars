@@ -1,3 +1,9 @@
+## Publish to npm
+
+1. Add a new version number to `package.json`, otherwise you will get an 403 error
+2. Commit changes
+3. run `npm publish`
+
 ## Paket installieren:
 
 `pnpm i gbw-shared-vars`

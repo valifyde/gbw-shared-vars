@@ -1,6 +1,6 @@
 {
   "name": "gbw-shared-vars",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "index.js",
   "devDependencies": {
     "prettier": "^3.0.3"

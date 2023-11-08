@@ -11,23 +11,23 @@
 */
 
 // editable base numbers - ONLY EDIT THIS SECTION
-$bpSm: 375 !default;
+$bpSm: 360 !default;
 $bpMd: 768 !default;
 $bpLg: 1024 !default;
 $bpXl: 1280 !default;
 $bpXxl: 1440 !default;
 $bpXxxl: 1920 !default;
 
-// as px string: eg 375px
-$bpSmPx: $bpSm + 'px'; // 375px
+// as px string: eg 360px
+$bpSmPx: $bpSm + 'px'; // 360px
 $bpMdPx: $bpMd + 'px'; // 768px
 $bpLgPx: $bpLg + 'px'; // 1024px
 $bpXlPx: $bpXl + 'px'; // 1280px
 $bpXxlPx: $bpXxl + 'px'; // 1440px
 $bpXxxlPx: $bpXxxl + 'px'; // 1920px
 
-// as px string minus one: eg 374px
-$bpSmDownPx: ($bpSm - 1) + 'px'; // 374px
+// as px string minus one: eg 359px
+$bpSmDownPx: ($bpSm - 1) + 'px'; // 359px
 $bpMdDownPx: ($bpMd - 1) + 'px'; // 767px
 $bpLgDownPx: ($bpLg - 1) + 'px'; // 1023px
 $bpXlDownPx: ($bpXl - 1) + 'px'; // 1279px
